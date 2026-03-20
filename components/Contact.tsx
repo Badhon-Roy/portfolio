@@ -10,7 +10,7 @@ export default function Contact() {
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
 
-            <div className="container mx-auto px-6 md:px-12 relative z-10">
+            <div className="container mx-auto px-4 md:px-12 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
                     {/* Left: Info */}
                     <motion.div
@@ -53,7 +53,7 @@ export default function Contact() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="p-8 md:p-12 rounded-4xl bg-zinc-900/40 backdrop-blur-xl border border-white/5 relative shadow-2xl overflow-hidden group"
+                        className="p-4 md:p-12 rounded-4xl bg-zinc-900/40 backdrop-blur-xl border border-white/5 relative shadow-2xl overflow-hidden group"
                     >
                         {/* Inner Form Glow */}
                         <div className="absolute -inset-px bg-linear-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-4xl pointer-events-none" />
