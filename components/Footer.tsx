@@ -15,18 +15,18 @@ export default function Footer() {
 
             <div className="container mx-auto px-6 md:px-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
-                    <Link href="#" className="flex items-center gap-1 group">
-                    <div className="w-25 h-25 rounded-full flex items-center justify-center overflow-hidden border-none group-hover:scale-110 transition-transform duration-500">
-                        <Image
-                            src={LogoImg}
-                            alt="Avatar Logo"
-                            width={80}
-                            height={80}
-                            className="object-contain"
-                        />
-                    </div>
-                    <span className="text-primary text-5xl font-bold font-heading">Ch<span className="text-[#f6c71e]">â</span>mpa.</span>
-                </Link>
+                    <Link href="#" className="flex items-center gap-1 group mb-4">
+                        <div className="w-14 lg:w-25 h-14 lg:h-25 rounded-full flex items-center justify-center overflow-hidden border-none group-hover:scale-110 transition-transform duration-500">
+                            <Image
+                                src={LogoImg}
+                                alt="Avatar Logo"
+                                width={80}
+                                height={80}
+                                className="object-contain"
+                            />
+                        </div>
+                        <span className="text-primary text-5xl font-bold font-heading">Ch<span className="text-secondary">â</span>mpa.</span>
+                    </Link>
 
                     <p className="text-text-muted text-xl max-w-2xl mb-12 leading-relaxed">
                         Helping brands tell their stories through meaningful design and impactful
@@ -37,7 +37,7 @@ export default function Footer() {
                     <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
                         {[
                             { icon: <Twitter size={24} />, color: "hover:bg-[#1DA1F2]", label: "Twitter" },
-                            { icon: <Github size={24} />, color: "hover:bg-[#E4405F]", label: "GitHub",link: "https://github.com/Champa-Roy" },
+                            { icon: <Github size={24} />, color: "hover:bg-[#E4405F]", label: "GitHub", link: "https://github.com/Champa-Roy" },
                             { icon: <Linkedin size={24} />, color: "hover:bg-[#0077B5]", label: "LinkedIn" },
                             { icon: <Facebook size={24} />, color: "hover:bg-[#1877F2]", label: "Facebook", link: "https://www.facebook.com/champa.roy.753805" },
                         ].map((social, i) => (
