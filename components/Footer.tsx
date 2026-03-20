@@ -16,7 +16,7 @@ export default function Footer() {
             <div className="container mx-auto px-6 md:px-12 relative z-10">
                 <div className="flex flex-col items-center text-center">
                     <Link href="#" className="flex items-center gap-1 group mb-4">
-                        <div className="w-14 lg:w-25 h-14 lg:h-25 rounded-full flex items-center justify-center overflow-hidden border-none group-hover:scale-110 transition-transform duration-500">
+                        <div className="w-10 lg:w-25 h-10 lg:h-25 rounded-full flex items-center justify-center overflow-hidden border-none group-hover:scale-110 transition-transform duration-500">
                             <Image
                                 src={LogoImg}
                                 alt="Avatar Logo"
@@ -25,7 +25,7 @@ export default function Footer() {
                                 className="object-contain"
                             />
                         </div>
-                        <span className="text-primary text-5xl font-bold font-heading">Ch<span className="text-secondary">â</span>mpa.</span>
+                        <span className="text-primary text-3xl lg:text-5xl font-bold font-heading">Ch<span className="text-secondary">â</span>mpa.</span>
                     </Link>
 
                     <p className="text-text-muted text-xl max-w-2xl mb-12 leading-relaxed">
