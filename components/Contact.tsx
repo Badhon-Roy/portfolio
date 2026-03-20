@@ -30,9 +30,9 @@ export default function Contact() {
 
                         <div className="space-y-8">
                             {[
-                                { icon: <Mail size={28} />, label: "Email Me", val: "ronald.portfolio@gmail.com", color: "primary" },
+                                { icon: <Mail size={28} />, label: "Email Me", val: "roychampa826@gmail.com", color: "primary" },
                                 { icon: <Phone size={28} />, label: "Call Me", val: "+1 (234) 567-890", color: "secondary" },
-                                { icon: <MapPin size={28} />, label: "Visit Me", val: "20, New York, USA", color: "primary" },
+                                { icon: <MapPin size={28} />, label: "Visit Me", val: "Dhaka, Bangladesh", color: "primary" },
                             ].map((info, i) => (
                                 <div key={i} className="flex items-center gap-6 group">
                                     <div className={`w-14 h-14 bg-zinc-900 border border-white/5 rounded-2xl flex items-center justify-center text-white group-hover:bg-${info.color} group-hover:border-transparent transition-all duration-500 transform group-hover:scale-110 group-hover:rotate-6`}>

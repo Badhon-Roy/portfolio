@@ -6,10 +6,8 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 const STATS = [
-    { label: "Project Complete", value: "1,500+" },
-    { label: "Years Experience", value: "12+" },
-    { label: "Client Satisfaction", value: "99+" },
-    { label: "Project Complete", value: "1,500+" },
+    { label: "Project Complete", value: "15+" },
+    { label: "Years Experience", value: "0.5+" }
 ];
 
 export default function About() {
@@ -48,7 +46,7 @@ export default function About() {
                             transition={{ delay: 0.5 }}
                             className="absolute -bottom-8 -left-8 bg-zinc-900/80 backdrop-blur-xl border border-white/10 p-6 rounded-2xl shadow-2xl z-20 hidden md:block"
                         >
-                            <p className="text-primary text-4xl font-bold font-heading">12+</p>
+                            <p className="text-primary text-4xl font-bold font-heading">0.5+</p>
                             <p className="text-white/60 text-sm font-semibold uppercase tracking-widest mt-1">Years Exp.</p>
                         </motion.div>
                     </motion.div>

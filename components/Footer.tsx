@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { Twitter, Instagram, Linkedin, Facebook, Heart } from "lucide-react";
+import { Twitter, Instagram, Linkedin, Facebook, Heart, Github } from "lucide-react";
 import LogoImg from "@/assets/images/logo.png"
 import Image from "next/image";
 
@@ -37,13 +37,14 @@ export default function Footer() {
                     <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
                         {[
                             { icon: <Twitter size={24} />, color: "hover:bg-[#1DA1F2]", label: "Twitter" },
-                            { icon: <Instagram size={24} />, color: "hover:bg-[#E4405F]", label: "Instagram" },
+                            { icon: <Github size={24} />, color: "hover:bg-[#E4405F]", label: "GitHub",link: "https://github.com/Champa-Roy" },
                             { icon: <Linkedin size={24} />, color: "hover:bg-[#0077B5]", label: "LinkedIn" },
-                            { icon: <Facebook size={24} />, color: "hover:bg-[#1877F2]", label: "Facebook" },
+                            { icon: <Facebook size={24} />, color: "hover:bg-[#1877F2]", label: "Facebook", link: "https://www.facebook.com/champa.roy.753805" },
                         ].map((social, i) => (
                             <Link
                                 key={i}
-                                href="#"
+                                href={social.link || "#"}
+                                target="_blank"
                                 className={`w-14 h-14 bg-zinc-900 border border-white/5 rounded-2xl flex items-center justify-center text-white/60 hover:text-white ${social.color} hover:border-transparent hover:scale-110 active:scale-95 transition-all duration-500 shadow-lg`}
                             >
                                 {social.icon}

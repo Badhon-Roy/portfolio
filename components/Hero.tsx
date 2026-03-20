@@ -41,8 +41,8 @@ export default function Hero() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="text-text-muted text-lg max-w-lg mb-10 leading-relaxed font-medium"
                     >
-                        Designing digital experiences that are intuitive, beautiful, and functional.
-                        Turning complex problems into elegant solutions through research and design.
+                        Crafting high-performance, responsive web applications with modern frontend technologies.
+                        Turning complex designs into pixel-perfect, interactive digital experiences.
                     </motion.p>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -90,9 +90,9 @@ export default function Hero() {
                             initial={{ y: 20 }}
                             animate={{ y: -20 }}
                             transition={{ repeat: Infinity, duration: 3, repeatType: "reverse", ease: "easeInOut" }}
-                            className="absolute -top-10 -left-10 w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl z-20"
+                            className="absolute -top-10 -left-10 w-24 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl z-20"
                         >
-                            <span className="text-3xl font-bold text-[#0061ff]">Ps</span>
+                            <span className="text-3xl font-bold text-[#0061ff]">HTML</span>
                         </motion.div>
 
                         <motion.div
@@ -101,7 +101,7 @@ export default function Hero() {
                             transition={{ repeat: Infinity, duration: 4, repeatType: "reverse", ease: "easeInOut" }}
                             className="absolute top-20 -right-10 w-20 h-20 bg-white rounded-2xl flex items-center justify-center shadow-xl z-20"
                         >
-                            <span className="text-3xl font-bold text-[#ff6b00]">Ai</span>
+                            <span className="text-3xl font-bold text-[#ff6b00]">CSS</span>
                         </motion.div>
 
                         <motion.div
@@ -110,7 +110,7 @@ export default function Hero() {
                             transition={{ repeat: Infinity, duration: 2.5, repeatType: "reverse", ease: "easeInOut" }}
                             className="absolute -bottom-5 -right-5 w-24 h-24 bg-white rounded-2xl flex items-center justify-center shadow-xl z-20"
                         >
-                            <Image src="https://upload.wikimedia.org/wikipedia/commons/3/33/Sketch_logo.svg" alt="Sketch" width={48} height={48} />
+                            <span className="text-3xl font-bold text-primary">JS</span>
                         </motion.div>
 
                         {/* Stats Card */}
@@ -124,7 +124,7 @@ export default function Hero() {
                                 <CheckCircle2 size={32} />
                             </div>
                             <div>
-                                <p className="text-white font-extrabold text-2xl leading-none">1,500+</p>
+                                <p className="text-white font-extrabold text-2xl leading-none">15+</p>
                                 <p className="text-white/60 text-sm font-semibold mt-1">Projects Completed</p>
                             </div>
                         </motion.div>

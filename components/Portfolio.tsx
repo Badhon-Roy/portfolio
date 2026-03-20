@@ -11,6 +11,7 @@ import TeaHouseImg from "@/assets/images/tea-house.png"
 import LeadChapture from "@/assets/images/lead-chapture.png"
 import Landio from "@/assets/images/landio.png"
 import Organio from "@/assets/images/Organico.png"
+import JerinsParlour from "@/assets/images/jerins-parlour.png"
 
 const PROJECTS = [
     {
@@ -54,6 +55,13 @@ const PROJECTS = [
         image: Landio,
         link: "https://champa-roy.github.io/chat-bot-landing-page/",
         github: "https://github.com/Champa-Roy/chat-bot-landing-page"
+    },
+    {
+        title: "Jerins Parlour - Beauty Parlour",
+        category: "E-commerce Website",
+        image: JerinsParlour,
+        link: "https://champa-roy.github.io/jerins-parlour/",
+        github: "https://github.com/Champa-Roy/jerins-parlour"
     },
     {
         title: "Organico - Kitchen Store",
@@ -105,36 +113,36 @@ export default function Portfolio() {
                             className="group relative"
                         >
                             <Link href={project.link}>
-                            <div className="relative aspect-video overflow-hidden rounded border-2 lg:border-8 border-white/5 bg-zinc-900">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover transition-transform duration-1000 group-hover:scale-110"
-                                />
+                                <div className="relative aspect-video overflow-hidden rounded border-2 lg:border-8 border-white/5 bg-zinc-900">
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        fill
+                                        className="object-cover transition-transform duration-1000 group-hover:scale-110"
+                                    />
 
-                                {/* Premium Overlay */}
-                                <div className="absolute inset-0 bg-linear-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-10">
-                                    <div className="transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-100">
-                                        {/* <div className="flex items-center gap-4 mb-4">
+                                    {/* Premium Overlay */}
+                                    <div className="absolute inset-0 bg-linear-to-t from-background-dark via-background-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-10">
+                                        <div className="transform translate-y-10 group-hover:translate-y-0 transition-transform duration-500 delay-100">
+                                            {/* <div className="flex items-center gap-4 mb-4">
                                             <span className="w-10 h-px bg-primary" />
                                             <span className="text-primary bg-secondary px-2 py-1 rounded font-bold uppercase tracking-[0.2em] text-xs md:text-sm">
                                                 {project.category}
                                             </span>
                                         </div> */}
-                                        <h3 className="text-white text-xl md:text-4xl font-bold font-heading mb-6">
-                                            {project.title}
-                                        </h3>
-                                        <Link
-                                            href={project.link}
-                                            target="_blank"
-                                            className="w-8 lg:w-14 h-8 lg:h-14 bg-white rounded-full flex items-center justify-center text-background-dark hover:bg-primary hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl"
-                                        >
-                                            <ArrowUpRight size={18} className="lg:size-28" />
-                                        </Link>
+                                            <h3 className="text-white text-xl md:text-4xl font-bold font-heading mb-6">
+                                                {project.title}
+                                            </h3>
+                                            <Link
+                                                href={project.link}
+                                                target="_blank"
+                                                className="w-8 lg:w-14 h-8 lg:h-14 bg-white rounded-full flex items-center justify-center text-background-dark hover:bg-primary hover:text-white transition-all transform hover:scale-110 active:scale-95 shadow-2xl"
+                                            >
+                                                <ArrowUpRight className="size-[18px] lg:size-8" />
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
                             </Link>
 
                             {/* Desktop Info (Visible below card) */}
