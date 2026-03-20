@@ -112,7 +112,7 @@ export default function Portfolio() {
                             transition={{ delay: i * 0.1, duration: 0.8 }}
                             className="group relative"
                         >
-                            <Link href={project.link}>
+                            <Link href={project.link} target="_blank">
                                 <div className="relative aspect-video overflow-hidden rounded border-2 lg:border-8 border-white/5 bg-zinc-900">
                                     <Image
                                         src={project.image}
