@@ -68,7 +68,8 @@ export default function Navbar() {
                 {/* Actions */}
                 <div className="flex items-center gap-4">
                     <Link
-                        href="#"
+                        href="/Champa-Roy-Resume.pdf"
+                        download="Champa-Roy-Resume.pdf"
                         className="hidden md:flex px-7 py-3 bg-white text-background-dark rounded-full items-center gap-2 text-sm font-bold hover:bg-primary hover:text-white transition-all transform hover:scale-105 active:scale-95 shadow-xl"
                     >
                         Resume
@@ -107,7 +108,8 @@ export default function Navbar() {
                                 </Link>
                             ))}
                             <Link
-                                href="#"
+                                href="/Champa-Roy-Resume.pdf"
+                                download="Champa-Roy-Resume.pdf"
                                 onClick={() => setIsOpen(false)}
                                 className="mt-4 px-8 py-4 bg-primary text-white rounded-2xl flex items-center justify-center gap-3 text-xl font-bold shadow-2xl shadow-primary/20"
                             >

@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import MyImg from "@/assets/images/my-image.jpg";
 
 const STATS = [
     { label: "Project Complete", value: "15+" },
@@ -27,13 +28,12 @@ export default function About() {
                         viewport={{ once: true }}
                         className="relative"
                     >
-                        <div className="relative z-10 rounded-4xl overflow-hidden border-8 border-white/5 bg-zinc-900 group">
+                        <div className="relative z-10 h-[700px] rounded-4xl overflow-hidden border-8 border-white/5 bg-zinc-900 group">
                             <Image
-                                src="/ronald.png"
+                                src={MyImg}
                                 alt="About Ronald"
-                                width={800}
-                                height={800}
-                                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                fill
+                                className="object-cover object-center transition-transform duration-700 group-hover:scale-110"
                             />
                             {/* Inner Overlay Glow */}
                             <div className="absolute inset-0 bg-linear-to-t from-background-dark/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

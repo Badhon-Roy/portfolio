@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ArrowUpRight, Github } from "lucide-react";
 import BacolaImg from "@/assets/images/bacola-project.png"
 import CourseImg from "@/assets/images/course-management.png"
-import MareedoImg from "@/assets/images/Mareedo.png";
+import HomeStyleImg from "@/assets/images/home-style.png"
 import TeaHouseImg from "@/assets/images/tea-house.png"
 import LeadChapture from "@/assets/images/lead-chapture.png"
 import Landio from "@/assets/images/landio.png"
@@ -29,11 +29,11 @@ const PROJECTS = [
         github: "https://github.com/Champa-Roy/course-management"
     },
     {
-        title: "Mareedo - Fashion Store",
-        category: "E-commerce Website",
-        image: MareedoImg,
-        link: "https://champa-roy.github.io/Mareedo/",
-        github: "https://github.com/Champa-Roy/Mareedo"
+        title: "SaaSto - Business Finance Management",
+        category: "SaaS Multi-page Website",
+        image: HomeStyleImg,
+        link: "https://champa-roy.github.io/Home-style/",
+        github: "https://github.com/Champa-Roy/Home-style"
     },
     {
         title: "Tea House - Premium Tea Shop",
