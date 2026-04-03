@@ -76,7 +76,7 @@ export default function Hero() {
                         className="relative"
                     >
                         {/* Main Profile Circle */}
-                        <div className="w-[500px] h-[500px] border-8 border-white/5 rounded-full overflow-hidden flex items-center justify-center bg-linear-to-br from-[#1eb2ff] to-[#0061ff] shadow-2xl relative">
+                        <div className="w-[500px] h-[500px] border-8 border-white/5 rounded-full overflow-hidden flex items-center justify-center bg-primary shadow-2xl relative">
                             <Image
                                 src={MyImg}
                                 alt="Ronald"
