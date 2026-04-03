@@ -36,8 +36,8 @@ export default function Footer() {
                     {/* Social Links */}
                     <div className="flex flex-wrap items-center justify-center gap-6 mb-16">
                         {[
-                            { icon: <Twitter size={24} />, color: "hover:bg-[#1DA1F2]", label: "Twitter" },
                             { icon: <Github size={24} />, color: "hover:bg-[#E4405F]", label: "GitHub", link: "https://github.com/Champa-Roy" },
+                            { icon: <Twitter size={24} />, color: "hover:bg-[#1DA1F2]", label: "Twitter" },
                             { icon: <Linkedin size={24} />, color: "hover:bg-[#0077B5]", label: "LinkedIn" },
                             { icon: <Facebook size={24} />, color: "hover:bg-[#1877F2]", label: "Facebook", link: "https://www.facebook.com/champa.roy.753805" },
                         ].map((social, i) => (

@@ -2,10 +2,58 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function Contact() {
+    const form = useRef<HTMLFormElement>(null);
+    const [sending, setSending] = useState(false);
+
+    const sendEmail = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!form.current) return;
+
+        setSending(true);
+        const toastId = toast.loading("Sending message...");
+
+        const SERVICE_ID = "service_0766obj";
+        const TEMPLATE_ID = "template_6gq3ijb";
+        const PUBLIC_KEY = "JlqIHu4JrN-7UVfww";
+
+        // Manually construct parameter object to match EmailJS template variables
+        const formData = new FormData(form.current);
+        const templateParams = {
+            name: formData.get("name"),
+            email: formData.get("email"),
+            title: formData.get("title"),
+            message: formData.get("message"),
+        };
+
+        emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY)
+            .then(() => {
+                toast.success("Message sent successfully!", { id: toastId });
+                form.current?.reset();
+            })
+            .catch((error) => {
+                toast.error("Failed to send message. Please try again.", { id: toastId });
+                console.error("EmailJS Error:", error);
+            })
+            .finally(() => {
+                setSending(false);
+            });
+    };
     return (
         <section id="contact" className="py-24 relative overflow-hidden">
+            <Toaster
+                position="bottom-center"
+                reverseOrder={false}
+                containerStyle={{
+                    top: 40,
+                    zIndex: 99999,
+                }}
+            />
             {/* Background Glows */}
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 rounded-full blur-[100px] pointer-events-none" />
@@ -31,7 +79,7 @@ export default function Contact() {
                         <div className="space-y-8">
                             {[
                                 { icon: <Mail size={28} />, label: "Email Me", val: "roychampa826@gmail.com", color: "primary" },
-                                { icon: <Phone size={28} />, label: "Call Me", val: "+1 (234) 567-890", color: "secondary" },
+                                { icon: <Phone size={28} />, label: "Call Me", val: "01825008626", color: "secondary" },
                                 { icon: <MapPin size={28} />, label: "Visit Me", val: "Dhaka, Bangladesh", color: "primary" },
                             ].map((info, i) => (
                                 <div key={i} className="flex items-center gap-6 group">
@@ -55,16 +103,16 @@ export default function Contact() {
                         transition={{ duration: 0.8 }}
                         className="p-4 md:p-12 rounded-4xl bg-zinc-900/40 backdrop-blur-xl border border-white/5 relative shadow-2xl overflow-hidden group"
                     >
-                        {/* Inner Form Glow */}
-                        <div className="absolute -inset-px bg-linear-to-br from-primary/10 via-transparent to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-4xl pointer-events-none" />
 
-                        <form className="relative z-10 space-y-6" onSubmit={(e) => e.preventDefault()}>
+                        <form ref={form} onSubmit={sendEmail} className="relative z-10 space-y-6">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
                                     <label className="text-white/60 font-bold text-xs uppercase tracking-widest ml-1">Full Name</label>
                                     <input
                                         type="text"
-                                        placeholder="Ronald Johnson"
+                                        name="name"
+                                        required
+                                        placeholder="Full Name"
                                         className="w-full bg-white/5 border border-white/10 rounded-2xl mt-2 px-6 py-4 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all placeholder:text-white/20 font-medium"
                                     />
                                 </div>
@@ -72,7 +120,9 @@ export default function Contact() {
                                     <label className="text-white/60 font-bold text-xs uppercase tracking-widest ml-1">Email Address</label>
                                     <input
                                         type="email"
-                                        placeholder="ronald@gmail.com"
+                                        name="email"
+                                        required
+                                        placeholder="Email Address"
                                         className="w-full bg-white/5 border border-white/10 rounded-2xl mt-2 px-6 py-4 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all placeholder:text-white/20 font-medium"
                                     />
                                 </div>
@@ -82,7 +132,9 @@ export default function Contact() {
                                 <label className="text-white/60 font-bold text-xs uppercase tracking-widest ml-1">Project Subject</label>
                                 <input
                                     type="text"
-                                    placeholder="UI Design Project"
+                                    name="title"
+                                    required
+                                    placeholder="Project Subject"
                                     className="w-full bg-white/5 border border-white/10 rounded-2xl mt-2 px-6 py-4 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all placeholder:text-white/20 font-medium"
                                 />
                             </div>
@@ -90,17 +142,21 @@ export default function Contact() {
                             <div className="space-y-2">
                                 <label className="text-white/60 font-bold text-xs uppercase tracking-widest ml-1">Message Detail</label>
                                 <textarea
+                                    name="message"
                                     rows={4}
+                                    required
                                     placeholder="Tell me about your project..."
                                     className="w-full bg-white/5 border border-white/10 rounded-2xl mt-2 px-6 py-4 text-white focus:border-primary/50 focus:bg-white/10 outline-none transition-all placeholder:text-white/20 font-medium resize-none"
                                 ></textarea>
                             </div>
 
                             <button
-                                className="w-full py-5 bg-primary text-white rounded-2xl flex items-center justify-center gap-3 text-lg font-bold hover:shadow-[0_20px_40px_-10px_rgba(25,201,134,0.4)] active:scale-95 transition-all duration-500 group shadow-lg"
+                                type="submit"
+                                disabled={sending}
+                                className={`w-full py-5 bg-secondary cursor-pointer text-black rounded-2xl flex items-center justify-center gap-3 text-lg font-bold active:scale-95 transition-all duration-500 group shadow-lg ${sending ? "opacity-70 cursor-not-allowed" : ""}`}
                             >
-                                Send Message
-                                <Send size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                                {sending ? "Sending..." : "Send Message"}
+                                <Send size={20} className={`${sending ? "animate-pulse" : "group-hover:translate-x-1 group-hover:-translate-y-1"} transition-transform`} />
                             </button>
                         </form>
                     </motion.div>

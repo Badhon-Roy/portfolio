@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, CheckCircle2 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import MyImg from "@/assets/images/my-image.jpg";
 
 export default function Hero() {
     return (
@@ -77,11 +78,11 @@ export default function Hero() {
                         {/* Main Profile Circle */}
                         <div className="w-[500px] h-[500px] border-8 border-white/5 rounded-full overflow-hidden flex items-center justify-center bg-linear-to-br from-[#1eb2ff] to-[#0061ff] shadow-2xl relative">
                             <Image
-                                src="/ronald.png"
+                                src={MyImg}
                                 alt="Ronald"
                                 width={500}
                                 height={500}
-                                className="object-cover w-full h-full scale-105"
+                                className="object-cover object-center w-full h-full scale-105"
                             />
                         </div>
 

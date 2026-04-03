@@ -22,7 +22,7 @@ const SKILLS = [
         description: "Utilizing utility-first CSS to build custom, highly-performant, and scalable user interfaces rapidly.",
         count: "03"
     },
-           {
+    {
         icon: <Terminal className="w-12 h-12 text-red-500" />,
         title: "Basic JavaScript",
         description: "Implementing complex logic and interactive features using modern JavaScript and ES6+ standards.",
@@ -40,7 +40,7 @@ const SKILLS = [
         description: "Ensuring a seamless and optimized experience across all devices, from smartphones to large desktop screens.",
         count: "06"
     },
- 
+
 ];
 
 export default function Skills() {
